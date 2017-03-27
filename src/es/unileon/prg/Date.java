@@ -27,10 +27,31 @@ class Date {
 		this._year = year;
 	}
 	
-}boolean isSameDay (Date another){
+	}
+	
+	boolean isSameDay (Date another){
 		
 		if (this._day == another.getDay()){
 			
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	boolean isSameMonth (Date another){
+		
+		if(this._month == another.getMonth()){
+			
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	boolean isSameYear (Date another){
+		
+		if (this._year == another.getYear()){
 			return true;
 		}else{
 			return false;
