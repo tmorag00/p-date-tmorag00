@@ -10,7 +10,10 @@ class MainDate {
 		tomorrow = new Date (28,3,2017);
 		
 		today.isSameDay(tomorrow);
+		today.isSameMonth(tomrrow);
+		today.isSameYear(tomorrow);
 		today.monthName();
+		
 	}
 
 }
