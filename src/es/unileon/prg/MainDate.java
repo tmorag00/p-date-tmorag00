@@ -1,19 +1,18 @@
-package es.unileon.prg
+package es.unileon.prg;
 
-class MainDate {
+public class MainDate {
 	
-	public static void main (string args []){
+	public static void main (String args []){
 	
-	Date today, tomorrow;
 	
-		today = new Date (27,3,2017);
-		tomorrow = new Date (28,3,2017);
+	
+		Date today = new Date (27, 03, 2017);
+		Date tomorrow = new Date (28, 03, 2017);
 		
 		System.out.println(today.isSameDay(tomorrow));
-		System.out.println(today.isSameMonth(tomrrow));
+		System.out.println(today.isSameMonth(tomorrow));
 		System.out.println(today.isSameYear(tomorrow));
-		System.out.println(today.isSame(tomorrow));
-		today.monthName();
+		
 		
 	}
 

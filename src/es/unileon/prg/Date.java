@@ -1,4 +1,4 @@
-package es.unileon.prg
+package es.unileon.prg;
 
 class Date {
 
@@ -6,22 +6,28 @@ class Date {
 	private int _month;
 	private int _year;
 	
+	public Date (int day, int month, int year){
+		this._day = day;
+		this._month = month;
+		this._year = year;
+	}
+	
 	int getDay() {
-		return day;
+		return _day;
 	}
 	void setDay (int day){
 		this._day  = day;
 	}
 	
 	int getMonth() {
-		return month;
+		return _month;
 	}
 	void setMonth (int month){
 		this._month = month;
 	}
 	
 	int getYear() {
-		return year;
+		return _year;
 	}
 	void setYear (int year){
 		this._year = year;
@@ -57,17 +63,8 @@ class Date {
 		}
 	}
 	
-	boolean isSame (Date another){
-		
-		if (isSameDay){
-		}else if (isSameMonth){
-		}else if (isSameYear){
-			return true;
-		}else{
-			return false;
-		}
-	}
+	
 }
 	
 	
-}	
+	
