@@ -27,7 +27,6 @@ class Date {
 		this._year = year;
 	}
 	
-	}
 	
 	boolean isSameDay (Date another){
 		
@@ -57,6 +56,18 @@ class Date {
 			return false;
 		}
 	}
+	
+	boolean isSame (Date another){
+		
+		if (isSameDay){
+		}else if (isSameMonth){
+		}else if (isSameYear){
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
 	
 	
 }	

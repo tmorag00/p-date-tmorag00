@@ -9,9 +9,10 @@ class MainDate {
 		today = new Date (27,3,2017);
 		tomorrow = new Date (28,3,2017);
 		
-		today.isSameDay(tomorrow);
-		today.isSameMonth(tomrrow);
-		today.isSameYear(tomorrow);
+		System.out.println(today.isSameDay(tomorrow));
+		System.out.println(today.isSameMonth(tomrrow));
+		System.out.println(today.isSameYear(tomorrow));
+		System.out.println(today.isSame(tomorrow));
 		today.monthName();
 		
 	}
