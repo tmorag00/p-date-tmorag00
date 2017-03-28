@@ -211,6 +211,11 @@ class Date {
 		return cont;
 	}
 	
+	public Date printDate(){
+		String fech = Date;
+		return fech;
+	}
+	
 	
 	
 	
