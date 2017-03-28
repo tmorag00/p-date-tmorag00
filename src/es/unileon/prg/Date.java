@@ -143,7 +143,7 @@ class Date {
 			case 8:
 			case 10:
 			case 12:
-				if(this._day < 1 || this._day > 31){
+				if(this._day > 1 || this._day < 31){
 					sentencia =  acierto;
 				}else{
 					sentencia = error;
@@ -153,14 +153,14 @@ class Date {
 			case 6:
 			case 9:
 			case 11:
-				if(this._day < 1 || this._day > 30){
+				if(this._day > 1 || this._day < 30){
 					sentencia = acierto;
 				}else{
 					sentencia = error;
 				}
 				break;
 			case 2:
-				if(this._day < 1 || this._day > 28){
+				if(this._day > 1 || this._day < 28){
 					sentencia = acierto;
 				}else{
 					sentencia = error;
@@ -168,6 +168,37 @@ class Date {
 				break;
 		}
 		return sentencia;
+	}
+	
+	String monthSeason (){
+		String season = null;
+		
+		switch (_month){
+			
+			case 1:
+			case 2:
+			case 3:
+			case 12:
+			 season = "Winter";
+			 break;
+			
+			case 4:
+			case 5:
+			case 6:
+				season = "Spring";
+				break;
+				
+			case 7:
+			case 8:
+			case 9:
+				season = "Summer";
+				break;
+			case 10:
+			case 11:
+				season = "Autumn";
+				break;
+		}
+		return season;
 	}
 	
 	
