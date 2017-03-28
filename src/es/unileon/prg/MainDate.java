@@ -19,6 +19,7 @@ public class MainDate {
 		System.out.println(today.monthName());
 		System.out.println(today.dayError());
 		System.out.println(today.monthSeason());
+		System.out.println(today.monthsLeft());
 	}
 
 }

@@ -201,7 +201,15 @@ class Date {
 		return season;
 	}
 	
-	
+	public int monthsLeft() {
+		
+		int cont = 0;
+		
+		for (int i = _month ; i < 12; i++){
+			 cont = cont +1;
+		}
+		return cont;
+	}
 	
 	
 	
