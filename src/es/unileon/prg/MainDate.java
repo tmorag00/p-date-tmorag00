@@ -12,8 +12,12 @@ public class MainDate {
 		System.out.println(today.isSameDay(tomorrow));
 		System.out.println(today.isSameMonth(tomorrow));
 		System.out.println(today.isSameYear(tomorrow));
-		
-		
+		System.out.println(today.isSame(tomorrow));
+		System.out.println(today.isSameDay_(tomorrow));
+		System.out.println(today.isSameMonth_(tomorrow));
+		System.out.println(today.isSameYear_(tomorrow));
+		System.out.println(today.monthName());
+		System.out.println(today.dayError());
 	}
 
 }
