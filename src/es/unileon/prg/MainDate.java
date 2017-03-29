@@ -5,9 +5,19 @@ public class MainDate {
 	public static void main (String args []){
 	
 	
-	
-		Date today = new Date (27, 03, 2017);
-		Date tomorrow = new Date (28, 03, 2017);
+		try{
+			Date today = new Date (27, 03, 2017);
+			System.out.println(today);
+		}catch (DateException e){
+			System.out.println(e.getMessage());
+		}
+		try{
+			Date tomorrow = new Date (28, 03, 2017);
+			System.out.println(today);
+		}catch (DateException e){
+			System.out.println(e.getMessage());
+		}
+		
 		
 		System.out.println(today.isSameDay(tomorrow));
 		System.out.println(today.isSameMonth(tomorrow));

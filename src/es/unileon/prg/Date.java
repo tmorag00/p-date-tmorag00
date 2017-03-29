@@ -6,9 +6,14 @@ class Date {
 	private int _month;
 	private int _year;
 	
-	public Date (int day, int month, int year){
+	public Date (int day, int month, int year) throws DateException{
 		this._day = day;
-		this._month = month;
+		if(_month >= 1 && _month <= 12){
+			this._month = month;
+		}else{
+			throw new DateException("Mes"+_month+" no valido"+"Valores posibles entre 1 y 12");
+		}
+		
 		this._year = year;
 	}
 	
