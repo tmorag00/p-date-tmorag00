@@ -2,46 +2,50 @@ package es.unileon.prg;
 
 class Date {
 
-	private int _day;    
-	private int _month;
-	private int _year;
+	private int day;    
+	private int month;
+	private int year;
 	
 	public Date (int day, int month, int year) throws DateException{
-		this._day = day;
-		if(_month >= 1 && _month <= 12){
-			this._month = month;
+	
+		if(month < 1 || month > 12){
+			throw new DateException("Mes"+month+" no valido"+"Valores posibles entre 1 y 12");
+		}else if(!isValidDay(day, month)){
+			throw new DateException("Dia "+day+" no valido"+" para el mes "+month);
+			
 		}else{
-			throw new DateException("Mes"+_month+" no valido"+"Valores posibles entre 1 y 12");
+			this.month = month;
+			this.day = day;
 		}
 		
-		this._year = year;
+		this.year = year;
 	}
 	
 	int getDay() {
-		return _day;
+		return day;
 	}
 	void setDay (int day){
-		this._day  = day;
+		this.day  = day;
 	}
 	
 	int getMonth() {
-		return _month;
+		return month;
 	}
 	void setMonth (int month){
-		this._month = month;
+		this.month = month;
 	}
 	
 	int getYear() {
-		return _year;
+		return year;
 	}
 	void setYear (int year){
-		this._year = year;
+		this.year = year;
 	}
 	
 	
 	boolean isSameDay (Date another){
 		
-		if (this._day == another.getDay()){
+		if (this.day == another.getDay()){
 			
 			return true;
 		}else{
@@ -51,7 +55,7 @@ class Date {
 	
 	boolean isSameMonth (Date another){
 		
-		if(this._month == another.getMonth()){
+		if(this.month == another.getMonth()){
 			
 			return true;
 		}else{
@@ -61,7 +65,7 @@ class Date {
 	
 	boolean isSameYear (Date another){
 		
-		if (this._year == another.getYear()){
+		if (this.year == another.getYear()){
 			return true;
 		}else{
 			return false;
@@ -78,20 +82,20 @@ class Date {
 	}
 	
 	boolean isSameDay_ (Date another){
-		return this._day == another.getDay();
+		return this.day == another.getDay();
 	}
 	
 	boolean isSameMonth_ (Date another){
-		return this._month == another.getMonth();
+		return this.month == another.getMonth();
 	}
 	
 	boolean isSameYear_ (Date another) {
-		return this._year == another.getYear();
+		return this.year == another.getYear();
 	}
 	
 	public String monthName() {
 		String name = null;
-		switch (_month){
+		switch (month){
 			
 			case 1: 
 				name = "January";
@@ -133,52 +137,20 @@ class Date {
 	return name;
 	}
 	
-	public String dayError(){
+	private boolean isValidDay(int day, int month){
 		
-		String sentencia = null;
-		String error = "dia equivocado";
-		String acierto = "dia correcto";
-		
-		switch (_month){
-			
-			case 1:
-			case 3:
-			case 5:
-			case 7:
-			case 8:
-			case 10:
-			case 12:
-				if(this._day > 1 || this._day < 31){
-					sentencia =  acierto;
-				}else{
-					sentencia = error;
-				}
-				break;
-			case 4:
-			case 6:
-			case 9:
-			case 11:
-				if(this._day > 1 || this._day < 30){
-					sentencia = acierto;
-				}else{
-					sentencia = error;
-				}
-				break;
-			case 2:
-				if(this._day > 1 || this._day < 28){
-					sentencia = acierto;
-				}else{
-					sentencia = error;
-				}
-				break;
+		int dom = getNumDays (month);
+		if(day > 1 && day < dom ){
+			return true;
+		}else{
+			return false;
 		}
-		return sentencia;
 	}
 	
 	String monthSeason (){
 		String season = null;
 		
-		switch (_month){
+		switch (month){
 			
 			case 1:
 			case 2:
@@ -210,22 +182,38 @@ class Date {
 		
 		int cont = 0;
 		
-		for (int i = _month ; i < 12; i++){
+		for (int i = month ; i < 12; i++){
 			 cont = cont +1;
 		}
 		return cont;
 	}
 	
 	public String toString(){
-		
-		return this._day+ " / " + this._month + "/" this._year;
+		StringBuffer fecha = new StringBuffer ();
+		fecha.append(day+"/");
+		fecha.append(month+"/");
+		fecha.append(year);
+		return fecha.toString();
 	}
 	
 	public String datesUntilEM(){
 		
-		int dom = 0;
+		int day2 = 0;
+		int dom = getNumDays(month);
+			
+		for(int i = day; i <= dom ; i++){
+			Date fecha = new Date (i , month, year);
+			fecha.append ();
+		}	
+		return fecha;
 		
-		switch(_month){
+	}
+	
+	private int getNumDays (int month){
+		
+		int dom = 0; 
+		
+		switch(month){
 			case 1:
 			case 3:
 			case 5:
@@ -245,12 +233,7 @@ class Date {
 				dom = 28;
 				break;
 		}
-		
-		do{
-			this._day = this._day + 1;
-			return this._day+ " / " + this._month + "/" this._year;
-		}while(int i = this._day; i < dom; i++ )	
-		
+	return dom;
 	}
 	
 	
