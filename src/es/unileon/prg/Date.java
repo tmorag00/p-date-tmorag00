@@ -218,10 +218,40 @@ class Date {
 	
 	public String toString(){
 		
-		return this._date+ " / " + this._month + "/" this.year;
+		return this._day+ " / " + this._month + "/" this._year;
 	}
 	
-	
+	public String datesUntilEM(){
+		
+		int dom = 0;
+		
+		switch(_month){
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				dom = 31;
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				dom = 30;
+				break;
+			case 2:
+				dom = 28;
+				break;
+		}
+		
+		do{
+			this._day = this._day + 1;
+			return this._day+ " / " + this._month + "/" this._year;
+		}while(int i = this._day; i < dom; i++ )	
+		
+	}
 	
 	
 	

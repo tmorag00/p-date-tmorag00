@@ -31,6 +31,7 @@ public class MainDate {
 		System.out.println(today.monthSeason());
 		System.out.println(today.monthsLeft());
 		System.out.println(today.toString());
+		System.out.println(today.datesUntilEM());
 	}
 
 }
