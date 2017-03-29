@@ -212,8 +212,8 @@ class Date {
 	}
 	
 	public Date printDate(){
-		String fech = Date;
-		return fech;
+		
+		return this.Date;
 	}
 	
 	
