@@ -211,9 +211,9 @@ class Date {
 		return cont;
 	}
 	
-	public Date printDate(){
+	public String toString(){
 		
-		return this.Date;
+		return this._date+ " / " + this._month + "/" this.year;
 	}
 	
 	
