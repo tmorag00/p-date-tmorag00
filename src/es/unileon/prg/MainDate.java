@@ -23,7 +23,6 @@ public class MainDate {
 		System.out.println(today.isSameMonth_(tomorrow));
 		System.out.println(today.isSameYear_(tomorrow));
 		System.out.println(today.monthName());
-		System.out.println(today.isValidDay());
 		System.out.println(today.monthSeason());
 		System.out.println(today.monthsLeft());
 		System.out.println(today.toString());

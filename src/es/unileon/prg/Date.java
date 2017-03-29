@@ -147,7 +147,7 @@ class Date {
 		}
 	}
 	
-	String monthSeason (){
+	public String monthSeason (){
 		String season = null;
 		
 		switch (month){
@@ -200,10 +200,11 @@ class Date {
 		
 		int day2 = 0;
 		int dom = getNumDays(month);
-			
+		// modificar pero imprimir fecha ( hacer un to.string(todo chachi))
+		
 		for(int i = day; i <= dom ; i++){
 			Date fecha = new Date (i , month, year);
-			fecha.append ();
+			fecha.append(fecha);
 		}	
 		return fecha;
 		
