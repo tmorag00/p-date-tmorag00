@@ -21,6 +21,7 @@ class Date {
 		this.year = year;
 	}
 	
+	
 	int getDay() {
 		return day;
 	}
@@ -196,17 +197,17 @@ class Date {
 		return fecha.toString();
 	}
 	
-	public String datesUntilEM(){
+	public StringBuffer datesUntilEM(){
 		
-		int day2 = 0;
 		int dom = getNumDays(month);
-		// modificar pero imprimir fecha ( hacer un to.string(todo chachi))
+		StringBuffer fecha2 = new StringBuffer ();
+		Date fecha = new Date (day , month, year);
 		
 		for(int i = day; i <= dom ; i++){
-			Date fecha = new Date (i , month, year);
-			fecha.append(fecha);
+			day = day +1;
+			fecha2 = fecha2.append(fecha);
 		}	
-		return fecha;
+		return fecha2;
 		
 	}
 	
